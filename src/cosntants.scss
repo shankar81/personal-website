@@ -1,0 +1,24 @@
+$color-grey: #aaa;
+$color-grey-medium: #777;
+$color-grey-transparent: rgba(0, 0, 0, 0.1);
+
+// Brand colors
+$primaryColor: #4db6ac;
+$primaryLightColor: #82e9de;
+$primaryDarkColor: #00867d;
+$secondaryColor: #e0e0e0;
+$secondaryLightColor: #ffffff;
+$secondaryDarkColor: #aeaeae;
+
+$border-radius: 0.2rem;
+
+$paddingH: 8rem;
+
+$transition: 0.3s;
+
+// Breakpoints
+$bp-largest: 75em; //1200px
+$bp-large: 68.75em; //1100px
+$bp-medium: 56.25em; //900px
+$bp-small: 37.5em; //600px
+$bp-smallest: 31.25em; //500px
