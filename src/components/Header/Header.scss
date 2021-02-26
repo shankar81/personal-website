@@ -1,0 +1,124 @@
+@import "../../cosntants.scss";
+
+// Light header styles
+.theme-light {
+  .header {
+    &__container {
+      position: fixed;
+      left: 0;
+      right: 0;
+      padding: 1rem $paddingH;
+      z-index: 3;
+      transition: background $transition;
+
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &__containerBg {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    &__list {
+      list-style: none;
+      width: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__item {
+      font-size: 1.6rem;
+      text-decoration: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: $border-radius;
+      border: 2px solid transparent;
+      cursor: pointer;
+
+      transition: background $transition, border $transition;
+
+      &:first-of-type {
+        font-weight: bold;
+        color: $primaryColor;
+        background-color: $secondaryColor;
+      }
+
+      &:hover {
+        background-color: $color-grey-transparent;
+      }
+
+      &:active {
+        background-color: $secondaryColor;
+        border: 2px solid $secondaryDarkColor;
+      }
+
+      &:focus {
+        background-color: $secondaryColor;
+        border: 2px solid $secondaryDarkColor;
+      }
+    }
+  }
+}
+
+// Dark header styles
+.theme-dark {
+  .header {
+    &__container {
+      background-color: blue;
+      position: fixed;
+      left: 0;
+      right: 0;
+      padding: 1rem $paddingH;
+      z-index: 3;
+      transition: background $transition;
+
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &__containerBg {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    &__list {
+      list-style: none;
+      width: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__item {
+      font-size: 1.6rem;
+      text-decoration: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: $border-radius;
+      border: 2px solid transparent;
+      cursor: pointer;
+
+      transition: background $transition, border $transition;
+
+      &:first-of-type {
+        font-weight: bold;
+        color: $primaryColor;
+        background-color: $secondaryColor;
+      }
+
+      &:hover {
+        background-color: $color-grey-transparent;
+      }
+
+      &:active {
+        background-color: $secondaryColor;
+        border: 2px solid $secondaryDarkColor;
+      }
+
+      &:focus {
+        background-color: $secondaryColor;
+        border: 2px solid $secondaryDarkColor;
+      }
+    }
+  }
+}

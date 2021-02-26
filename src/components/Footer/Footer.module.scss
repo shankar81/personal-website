@@ -1,0 +1,51 @@
+@import "../../cosntants.scss";
+
+.container {
+  font-size: 1.6rem;
+  background-color: $primaryColor;
+  color: #fff;
+  padding: 5rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.list {
+  list-style: none;
+}
+
+.copyright {
+  list-style: none;
+
+  align-self: flex-end;
+}
+
+.heading {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.social {
+  width: 20%;
+}
+
+.socialList {
+  list-style: none;
+
+  display: flex;
+}
+
+.socialItem {
+  margin-right: 3rem;
+}
+
+.icon {
+  font-size: 3rem;
+  color: $secondaryLightColor;
+  text-decoration: none;
+}
