@@ -1,0 +1,96 @@
+@import "../../cosntants.scss";
+@import "../../animations.scss";
+
+.project {
+  &__container {
+    position: relative;
+    width: calc(100% / 3.3);
+    height: 35rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 3rem;
+    border-radius: $border-radius;
+    overflow: hidden;
+    backface-visibility: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      .project__actions {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0%);
+      }
+
+      .project__actions--detail {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__actions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 101%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateY(-100%);
+    transition: transform $transition, opacity $transition, visibility $transition;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &--gallery {
+      position: absolute;
+      font-size: 5rem;
+      color: $primaryDarkColor;
+      cursor: pointer;
+      transition: transform $transition, background $transition;
+
+      align-self: center;
+
+      &:hover {
+        color: $primaryColor;
+        transform: scale(1.5);
+      }
+
+      &:active {
+        transform: scale(1);
+      }
+    }
+
+    &--detail {
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      color: white;
+      background-color: $primaryDarkColor;
+      padding: 1.5rem;
+      margin-top: auto;
+      border: none;
+      opacity: 0;
+      visibility: hidden;
+      backface-visibility: hidden;
+      cursor: pointer;
+      transform: translateY(100%);
+      transition: background $transition, transform $transition 0.4s,
+        opacity 0s 0.3s, visibility 0s 0.3s;
+
+      &:hover {
+        background-color: $primaryColor;
+      }
+    }
+  }
+}

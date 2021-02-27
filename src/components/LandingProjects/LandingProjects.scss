@@ -1,0 +1,25 @@
+@import "../../cosntants.scss";
+
+.landing-projects {
+  &__container {
+      padding: 3rem $paddingH;
+
+      display: flex;
+      flex-direction: column;
+  }
+
+  &__heading {
+      color: $primaryDarkColor;
+      letter-spacing: 0.2rem;
+      word-spacing: 0.5rem;
+      text-transform: uppercase;
+      margin: 0 auto;
+      margin-bottom: 5rem;
+  }
+
+  &__list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+}
