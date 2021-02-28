@@ -8,6 +8,7 @@
     height: 100%;
     width: 100%;
     z-index: $backdrop-zindex + 3;
+    user-select: none;
 
     display: flex;
     justify-content: center;

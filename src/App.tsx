@@ -5,6 +5,8 @@ import Header from "./components/Header/Header";
 import Theme from "./components/Theme/Theme";
 import LandingPage from "./pages/Landing/LandingPage";
 import { GlobalContext } from "./utils/GlobalContext";
+import About from "./pages/About/About";
+import "./App.scss";
 
 export default function App() {
   const [theme] = React.useState("light");
@@ -23,7 +25,11 @@ export default function App() {
       <Theme theme={theme}>
         <div className="scroll-mode">
           <Header />
-          <LandingPage />
+          {/**
+           * @TODO Add routing here
+           * */}
+          {/* <LandingPage /> */}
+          <About />
           <Footer />
           {isBackdropOpen && <Backdrop />}
         </div>
