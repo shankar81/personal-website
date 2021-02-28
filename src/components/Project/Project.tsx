@@ -2,11 +2,16 @@ import React from "react";
 import "./Project.scss";
 import { IoIosImages } from "react-icons/io";
 
-export default function Project() {
+interface Props {
+  thumbnail: string;
+  images: string[];
+}
+
+export default function Project(props: Props) {
   return (
     <div className="project__container">
       <img
-        src={require("../../assets/images/beats.png").default}
+        src={props.thumbnail}
         alt="Project"
         className="project__image"
       />

@@ -2,6 +2,10 @@ import React from "react";
 import "./Hero.scss";
 
 export default function Hero() {
+  function onScrollDown() {
+    window.scrollBy({ behavior: "smooth", top: 300 });
+  }
+
   return (
     <div className="hero__container">
       <div className="hero__hero">
@@ -14,7 +18,9 @@ export default function Hero() {
             explicabo exercitationem voluptate ab modi id aspernatur aperiam
             eaque rem facere officia et?
           </p>
-          <button className="hero__button">Explore</button>
+          <a href="#Products-section" onClick={onScrollDown} className="hero__button">
+            Explore
+          </a>
         </div>
         {/* <img
           src={require("../../assets/images/profile.png").default}
