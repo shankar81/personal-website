@@ -2,7 +2,11 @@ import React from "react";
 import Project from "../Project/Project";
 import "./LandingProjects.scss";
 
-export default function LandingProjects() {
+interface Props {
+  onOpenLightbox: () => void;
+}
+
+export default function LandingProjects(props: Props) {
   const images = [
     require("../../assets/images/beats_fitness.PNG").default,
     require("../../assets/images/beats_hub.PNG").default,
@@ -15,18 +19,22 @@ export default function LandingProjects() {
       <h1 className="landing-projects__heading">My Projects</h1>
       <div className="landing-projects__list">
         <Project
+          onOpenLightbox={props.onOpenLightbox}
           thumbnail={require("../../assets/images/beats.png").default}
           images={images}
         />
         <Project
+          onOpenLightbox={props.onOpenLightbox}
           thumbnail={require("../../assets/images/beats.png").default}
           images={images}
         />
         <Project
+          onOpenLightbox={props.onOpenLightbox}
           thumbnail={require("../../assets/images/beats.png").default}
           images={images}
         />
         <Project
+          onOpenLightbox={props.onOpenLightbox}
           thumbnail={require("../../assets/images/beats.png").default}
           images={images}
         />

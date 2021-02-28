@@ -21,12 +21,12 @@ export default function App() {
   return (
     <GlobalContext.Provider value={{ isBackdropOpen, onToggleBackdrop }}>
       <Theme theme={theme}>
-        <>
+        <div className="scroll-mode">
           <Header />
           <LandingPage />
           <Footer />
-          <Backdrop />
-        </>
+          {isBackdropOpen && <Backdrop />}
+        </div>
       </Theme>
     </GlobalContext.Provider>
   );
