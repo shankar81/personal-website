@@ -1,4 +1,5 @@
 import React from "react";
+import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import "./About.scss";
 
 export default function About() {
@@ -35,7 +36,7 @@ export default function About() {
             odio augue eleifend, consequat enim metus dapibus, erat ullamcorper
             odio augue eleifend, consequat enim
           </p>
-          <button className="about__me--button">Hire Me</button>
+          <PrimaryButton link="#About" label="Hire Me" />
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import PrimaryButton from "../PrimaryButton/PrimaryButton";
 import "./Hero.scss";
 
 export default function Hero() {
@@ -18,9 +19,11 @@ export default function Hero() {
             explicabo exercitationem voluptate ab modi id aspernatur aperiam
             eaque rem facere officia et?
           </p>
-          <a href="#Products-section" onClick={onScrollDown} className="hero__button">
-            Explore
-          </a>
+          <PrimaryButton
+            link="#Products-section"
+            onClick={onScrollDown}
+            label="Explore"
+          />
         </div>
         {/* <img
           src={require("../../assets/images/profile.png").default}
