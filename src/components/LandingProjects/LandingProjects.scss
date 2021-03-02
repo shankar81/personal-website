@@ -10,7 +10,7 @@
 
   &__heading {
       color: $primaryDarkColor;
-      letter-spacing: 0.2rem;
+      letter-spacing: $letter-spacing;
       word-spacing: 0.5rem;
       text-transform: uppercase;
       margin: 0 auto;

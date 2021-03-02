@@ -31,6 +31,9 @@
   &__heading {
     font-weight: 400;
     font-size: 4rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing;
     margin-bottom: 1rem;
   }
 
@@ -67,9 +70,11 @@
 
     &--heading {
       font-size: 4rem;
+      color: #333;
       font-weight: 400;
       text-align: center;
-      text-transform: capitalize;
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing;
       margin: 0 auto 3rem auto;
     }
   }
