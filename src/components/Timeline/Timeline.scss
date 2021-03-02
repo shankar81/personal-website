@@ -1,0 +1,77 @@
+@import "../../cosntants.scss";
+
+.timeline {
+  &__container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.2rem;
+    height: 100%;
+    background-color: $primaryColor;
+  }
+
+  &__event {
+    position: relative;
+    margin-bottom: 4rem;
+
+    display: flex;
+
+    &--reversed {
+      flex-direction: row-reverse;
+    }
+
+    &--dot {
+      background-color: $primaryDarkColor;
+      height: 2rem;
+      width: 2rem;
+      border-radius: 5rem;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--content {
+      width: 50%;
+      padding: 0 2rem;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      &--reversed {
+        align-items: flex-start;
+      }
+    }
+
+    &--heading {
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      text-align: right;
+    }
+
+    &--desc {
+        font-size: 1.6rem;
+      font-weight: 400;
+      color: #888;
+      text-align: end;
+
+      &--reversed {
+        text-align: start;
+      }
+    }
+
+    &--title {
+      font-size: 2rem;
+      text-align: right;
+    }
+  }
+}

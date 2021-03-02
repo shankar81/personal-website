@@ -57,4 +57,20 @@
       margin-bottom: 3rem;
     }
   }
+
+  &__timeline {
+    background-color: #eee;
+    padding: 3rem $paddingH 0 $paddingH;
+
+    display: flex;
+    flex-direction: column;
+
+    &--heading {
+      font-size: 4rem;
+      font-weight: 400;
+      text-align: center;
+      text-transform: capitalize;
+      margin: 0 auto 3rem auto;
+    }
+  }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
+import Timeline from "../../components/Timeline/Timeline";
 import "./About.scss";
 
 export default function About() {
@@ -38,6 +39,11 @@ export default function About() {
           </p>
           <PrimaryButton link="#About" label="Hire Me" />
         </div>
+      </div>
+
+      <div className="about__timeline">
+        <h1 className="about__timeline--heading">history</h1>
+        <Timeline />
       </div>
     </div>
   );
