@@ -9,12 +9,12 @@ import About from "./pages/About/About";
 import "./App.scss";
 
 export default function App() {
-  const [theme] = React.useState("light");
+  const [theme, setTheme] = React.useState("light"); // light | dark
   const [isBackdropOpen, setBackdropOpen] = React.useState(false);
 
-  // function toggleTheme() {
-  //   setTheme((currentTheme) => (currentTheme === "light" ? "dark" : "light"));
-  // }
+  function toggleTheme() {
+    setTheme((currentTheme) => (currentTheme === "light" ? "dark" : "light"));
+  }
 
   function onToggleBackdrop(value: boolean) {
     setBackdropOpen(value);
@@ -24,12 +24,15 @@ export default function App() {
     <GlobalContext.Provider value={{ isBackdropOpen, onToggleBackdrop }}>
       <Theme theme={theme}>
         <div className="scroll-mode">
+          <button style={{ zIndex: 50, margin: 50 }} onClick={toggleTheme}>
+            Change Theme
+          </button>
           <Header />
           {/**
            * @TODO Add routing here
            * */}
-          {/* <LandingPage /> */}
-          <About />
+          <LandingPage />
+          {/* <About /> */}
           <Footer />
           {isBackdropOpen && <Backdrop />}
         </div>

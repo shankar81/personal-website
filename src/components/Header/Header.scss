@@ -1,5 +1,17 @@
 @import "../../cosntants.scss";
 
+// Commmon
+.header {
+  &__list {
+    list-style: none;
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
 // Light header styles
 .theme-light {
   .header {
@@ -21,15 +33,6 @@
       background-color: rgba(0, 0, 0, 0.8);
     }
 
-    &__list {
-      list-style: none;
-      width: 50%;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
     &__item {
       font-size: 1.6rem;
       text-decoration: none;
@@ -54,11 +57,6 @@
         background-color: $secondaryColor;
         border: 2px solid $secondaryDarkColor;
       }
-
-      &:focus {
-        background-color: $secondaryColor;
-        border: 2px solid $secondaryDarkColor;
-      }
     }
   }
 }
@@ -67,7 +65,7 @@
 .theme-dark {
   .header {
     &__container {
-      background-color: blue;
+      color: white;
       position: fixed;
       left: 0;
       right: 0;
@@ -80,16 +78,8 @@
     }
 
     &__containerBg {
-      background-color: rgba(0, 0, 0, 0.3);
-    }
-
-    &__list {
-      list-style: none;
-      width: 50%;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      color: white;
+      background-color: rgba(255, 255, 255, 0.2);
     }
 
     &__item {
@@ -105,20 +95,15 @@
       &:first-of-type {
         font-weight: bold;
         color: $primaryColor;
-        background-color: $secondaryColor;
+        background-color: #333;
       }
 
       &:hover {
-        background-color: $color-grey-transparent;
+        background-color: #333;
       }
 
       &:active {
-        background-color: $secondaryColor;
-        border: 2px solid $secondaryDarkColor;
-      }
-
-      &:focus {
-        background-color: $secondaryColor;
+        background-color: #555;
         border: 2px solid $secondaryDarkColor;
       }
     }

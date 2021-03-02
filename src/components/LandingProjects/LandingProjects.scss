@@ -1,25 +1,42 @@
 @import "../../cosntants.scss";
 
 .landing-projects {
-  &__container {
+  &__heading {
+    font-size: 3rem;
+    color: $primaryDarkColor;
+    letter-spacing: $letter-spacing;
+    word-spacing: 0.5rem;
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.theme-light {
+  .landing-projects {
+    &__container {
       padding: 3rem $paddingH;
 
       display: flex;
       flex-direction: column;
+    }
   }
+}
 
-  &__heading {
-      color: $primaryDarkColor;
-      letter-spacing: $letter-spacing;
-      word-spacing: 0.5rem;
-      text-transform: uppercase;
-      margin: 0 auto;
-      margin-bottom: 5rem;
-  }
+.theme-dark {
+  .landing-projects {
+    &__container {
+      padding: 3rem $paddingH;
+      background-color: #222;
 
-  &__list{
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      flex-direction: column;
+    }
   }
 }

@@ -1,24 +1,7 @@
 @import "../../cosntants.scss";
 
+// Common
 .hero {
-  &__container {
-    height: 100vh;
-    padding: 0 $paddingH;
-    color: #000;
-    background-image: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0.85) 50%,
-        rgba(255, 255, 255, 0.85) 50%
-      ),
-      url(../../assets/images/nature1-min.jpg);
-    background-size: cover;
-    background-position: center;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
   &__hero {
     position: relative;
 
@@ -46,34 +29,72 @@
     font-weight: 400;
     margin-bottom: 1rem;
   }
+}
 
-  &__para {
-    font-size: 1.6rem;
-    color: $color-grey-medium;
-  }
+.theme-light {
+  .hero {
+    &__container {
+      height: 100vh;
+      padding: 0 $paddingH;
+      color: #000;
+      background-image: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0.85) 50%,
+          rgba(255, 255, 255, 0.85) 50%
+        ),
+        url(../../assets/images/nature1-min.jpg);
+      background-size: cover;
+      background-position: center;
 
-  &__button {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #fff;
-    background-color: $primaryDarkColor;
-    margin-top: 5rem;
-    padding: 1.5rem 5rem;
-    border: none;
-    border-radius: $border-radius;
-    cursor: pointer;
-    transition: background $transition, box-shadow $transition;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-    &:focus {
-      box-shadow: 0 0 0.1rem 0.5rem $primaryLightColor;
+    &__para {
+      font-size: 1.6rem;
+      color: $color-grey-medium;
+    }
+
+    &__img {
+      position: absolute;
+      right: 0;
+      top: -5rem;
+      height: 35rem;
     }
   }
+}
 
-  &__img {
-    position: absolute;
-    right: 0;
-    top: -5rem;
-    height: 35rem;
+.theme-dark {
+  .hero {
+    &__container {
+      height: 100vh;
+      padding: 0 $paddingH;
+      color: #ddd;
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.85) 50%,
+          rgba(0, 0, 0, 0.85) 50%
+        ),
+        url(../../assets/images/nature1-min.jpg);
+      background-size: cover;
+      background-position: center;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__para {
+      font-size: 1.6rem;
+      color: #aaa;
+    }
+
+    &__img {
+      position: absolute;
+      right: 0;
+      top: -5rem;
+      height: 35rem;
+    }
   }
 }
