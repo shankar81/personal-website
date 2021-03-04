@@ -1,0 +1,48 @@
+@import "../../cosntants.scss";
+
+.theme-light {
+  .contact {
+    &__container {
+      padding: 8rem $paddingH;
+    }
+
+    &__heading {
+      font-size: 4rem;
+      text-align: center;
+    }
+
+    &__para {
+      font-size: 1.6rem;
+      text-align: center;
+      color: #aaa;
+    }
+
+    &__form {
+      padding: 5rem 10rem;
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &--group {
+        width: 100%;
+        margin-bottom: 5rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    &__control {
+      &--full {
+        width: 100%;
+      }
+
+      &--half {
+        width: 45%;
+      }
+    }
+  }
+}

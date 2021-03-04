@@ -4,9 +4,8 @@ import Backdrop from "./components/Backdrop/Backdrop";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Theme from "./components/Theme/Theme";
-import LandingPage from "./pages/Landing/LandingPage";
+import Contact from "./pages/Contact/Contact";
 import { GlobalContext } from "./utils/GlobalContext";
-import About from './pages/About/About';
 
 export default function App() {
   const [theme, setTheme] = React.useState("light"); // light | dark
@@ -29,7 +28,7 @@ export default function App() {
            * @TODO Add routing here
            * */}
           {/* <LandingPage /> */}
-          <About />
+          <Contact />
           <Footer />
           {isBackdropOpen && <Backdrop />}
         </div>
