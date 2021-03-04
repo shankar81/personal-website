@@ -47,7 +47,7 @@ export default function About() {
         <Timeline />
       </div>
       <div className="about__skills">
-        <h1 className="about__heading">Skills</h1>
+        <h1 className="about__heading">What i Do</h1>
         <Skills />
       </div>
     </div>
