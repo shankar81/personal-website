@@ -33,6 +33,7 @@
     font-size: 4rem;
     color: #333;
     text-transform: uppercase;
+    text-align: center;
     letter-spacing: $letter-spacing;
     margin-bottom: 1rem;
   }
@@ -67,15 +68,14 @@
 
     display: flex;
     flex-direction: column;
+  }
 
-    &--heading {
-      font-size: 4rem;
-      color: #333;
-      font-weight: 400;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: $letter-spacing;
-      margin: 0 auto 3rem auto;
-    }
+  &__skills {
+    padding: 3rem $paddingH 0 $paddingH;
+
+    display: flex;
+    flex-direction: column;
+
+
   }
 }

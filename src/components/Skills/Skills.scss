@@ -1,0 +1,21 @@
+.theme-light {
+  .skills {
+    &__container {
+    }
+
+    &__para {
+      font-size: 1.6rem;
+      text-align: center;
+      color: #888;
+    }
+
+    &__list {
+        padding: 0 8rem ;
+        margin: 3rem 0;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+  }
+}

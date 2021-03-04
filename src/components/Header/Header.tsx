@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./Header.scss";
 import classnames from "classnames";
 
-export default function Header() {
+interface Props {
+  onChangeTheme: () => void;
+}
+export default function Header(props: Props) {
   const [scrolledEnough, setScrolledEnough] = useState(false);
 
   useEffect(() => {
@@ -29,6 +32,9 @@ export default function Header() {
         <li className="header__item">Our Work</li>
         <li className="header__item">Blog</li>
         <li className="header__item">Contact us</li>
+        <li onClick={props.onChangeTheme} className="header__item">
+          Change Theme
+        </li>
       </ul>
     </div>
   );

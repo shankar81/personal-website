@@ -1,5 +1,6 @@
 import React from "react";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
+import Skills from "../../components/Skills/Skills";
 import Timeline from "../../components/Timeline/Timeline";
 import "./About.scss";
 
@@ -42,8 +43,12 @@ export default function About() {
       </div>
 
       <div className="about__timeline">
-        <h1 className="about__timeline--heading">history</h1>
+        <h1 className="about__heading">history</h1>
         <Timeline />
+      </div>
+      <div className="about__skills">
+        <h1 className="about__heading">Skills</h1>
+        <Skills />
       </div>
     </div>
   );
