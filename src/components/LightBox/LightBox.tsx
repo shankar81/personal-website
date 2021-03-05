@@ -1,44 +1,32 @@
 import React, { useEffect, useState } from "react";
-import "./LightBox.scss";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
+import "./LightBox.scss";
 
+interface LightBoxImage {
+  selected: boolean;
+  src: string;
+}
 interface Props {
   onCloseLightbox: () => void;
+  images: string[];
 }
 
 export default function LightBox(props: Props) {
-  const [images, setImages] = useState([
-    {
-      selected: true,
-      src: require("../../assets/images/beats_fitness.PNG").default,
-    },
-    {
-      selected: false,
-      src: require("../../assets/images/beats_hub.PNG").default,
-    },
-    {
-      selected: false,
-      src: require("../../assets/images/beats_events.PNG").default,
-    },
-    {
-      selected: false,
-      src: require("../../assets/images/beats_store.PNG").default,
-    },
-    {
-      selected: false,
-      src: require("../../assets/images/beats_cart.PNG").default,
-    },
-  ]);
+  const [images, setImages] = useState<LightBoxImage[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     document.getElementsByTagName("body")[0].style.overflowY = "hidden";
+    const imgs = props.images.map((el, index) => {
+      return { src: el, selected: index === 0 };
+    });
+    setImages(imgs);
 
     return () => {
       document.getElementsByTagName("body")[0].style.overflowY = "scroll";
     };
-  }, []);
+  }, [props.images]);
 
   function onSelectThumbnail(index: number) {
     if (images[index].selected) return;
@@ -61,6 +49,7 @@ export default function LightBox(props: Props) {
     onSelectThumbnail(currIndex);
   }
 
+  console.log(images, images.length);
   return (
     <div className="lightbox__container">
       <div
@@ -70,7 +59,7 @@ export default function LightBox(props: Props) {
         <AiOutlineArrowLeft className="lightbox__icon" />
       </div>
       <img
-        src={images[currentIndex].src}
+        src={images[currentIndex]?.src}
         alt="Lightbox"
         className="lightbox__img"
       />

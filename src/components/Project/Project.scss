@@ -3,6 +3,8 @@
 
 .project {
   &__container {
+    position: relative;
+
     &:hover {
       .project__actions {
         visibility: visible;
@@ -19,7 +21,8 @@
   }
 
   &__image {
-    width: 100%;
+    background-size: cover;
+    background-position: center;
   }
 
   &__actions {
@@ -43,9 +46,13 @@
     }
 
     &--detail {
+      font-size: 1.3rem;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: $letter-spacing;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
       color: white;
       background-color: $primaryDarkColor;
       padding: 1.5rem;
@@ -63,6 +70,13 @@
         background-color: $primaryColor;
       }
     }
+  }
+
+  &__tech{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    height: 5rem;
   }
 }
 

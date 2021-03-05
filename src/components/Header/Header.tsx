@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Header.scss";
 import classnames from "classnames";
+import { NavLink } from "react-router-dom";
 
 interface Props {
   onChangeTheme: () => void;
@@ -27,11 +28,41 @@ export default function Header(props: Props) {
   return (
     <div className={classnames(...containerClasses)}>
       <ul className="header__list">
-        <li className="header__item">Home</li>
-        <li className="header__item">About Us</li>
-        <li className="header__item">Our Work</li>
-        <li className="header__item">Blog</li>
-        <li className="header__item">Contact us</li>
+        <NavLink exact
+          activeClassName="header__item--active"
+          className="header__item"
+          to="/"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          activeClassName="header__item--active"
+          className="header__item"
+          to="/about"
+        >
+          About Us
+        </NavLink>
+        <NavLink
+          activeClassName="header__item--active"
+          className="header__item"
+          to="/work"
+        >
+          Our Work
+        </NavLink>
+        <NavLink
+          activeClassName="header__item--active"
+          className="header__item"
+          to="/blog"
+        >
+          Blog
+        </NavLink>
+        <NavLink
+          activeClassName="header__item--active"
+          className="header__item"
+          to="/contact"
+        >
+          Contact us
+        </NavLink>
         <li onClick={props.onChangeTheme} className="header__item">
           Change Theme
         </li>

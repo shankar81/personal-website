@@ -4,6 +4,14 @@
   .contact {
     &__container {
       padding: 8rem $paddingH;
+      background-image: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0.9) 50%,
+          rgba(255, 255, 255, 0.9) 50%
+        ),
+        url(../../assets/images/nature1-min.jpg);
+      background-size: cover;
+      background-position: center;
     }
 
     &__heading {
@@ -18,7 +26,7 @@
     }
 
     &__form {
-      padding: 5rem 10rem;
+      padding: 10rem 10rem;
       width: 100%;
 
       display: flex;

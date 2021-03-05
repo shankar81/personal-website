@@ -12,7 +12,7 @@
         font-size: 1.3rem;
         text-transform: capitalize;
         font-weight: bold;
-        color: #aaa;
+        color: #888;
     }
 
     &__input {
@@ -20,6 +20,7 @@
         padding: 1rem 0;
         border: none;
         border-bottom: 1px solid #aaa;
+        background-color: transparent;
     }
   }
 }

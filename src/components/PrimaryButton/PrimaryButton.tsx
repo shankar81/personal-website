@@ -10,7 +10,13 @@ interface Props {
 
 export default function PrimaryButton(props: Props) {
   return (
-    <a href={props.link} onClick={props.onClick} className="button--primary">
+    <a
+      href={props.link}
+      target="_blank"
+      rel="noreferrer nofollow"
+      onClick={props.onClick}
+      className="button--primary"
+    >
       {props.label}
     </a>
   );

@@ -11,8 +11,10 @@ export default function LandingPage(props: Props) {
   const context = useContext(GlobalContext);
 
   const [openLightbox, setOpenLightbox] = useState(false);
+  const [images, setImages] = useState([""]);
 
-  function onOpenLightbox() {
+  function onOpenLightbox(images: string[]) {
+    setImages([...images]);
     setOpenLightbox(true);
     context.onToggleBackdrop(true);
   }
@@ -26,7 +28,9 @@ export default function LandingPage(props: Props) {
     <div className="landing__container">
       <Hero />
       <LandingProjects onOpenLightbox={onOpenLightbox} />
-      {openLightbox && <LightBox onCloseLightbox={onCloseLightbox} />}
+      {openLightbox && (
+        <LightBox images={images} onCloseLightbox={onCloseLightbox} />
+      )}
     </div>
   );
 }
