@@ -6,13 +6,14 @@ interface Props {
   label: string;
   link?: string;
   onClick?: () => void;
+  openInNewTab: boolean;
 }
 
 export default function PrimaryButton(props: Props) {
   return (
     <a
       href={props.link}
-      target="_blank"
+      target={props.openInNewTab ? "_blank" : ""}
       rel="noreferrer nofollow"
       onClick={props.onClick}
       className="button--primary"
@@ -21,3 +22,7 @@ export default function PrimaryButton(props: Props) {
     </a>
   );
 }
+
+PrimaryButton.defaultProps = {
+  openInNewTab: false,
+};

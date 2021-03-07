@@ -3,7 +3,8 @@ import "./Project.scss";
 import { IoIosImages } from "react-icons/io";
 
 interface Props {
-  thumbnail: string;
+  thumbnail?: string;
+  title?: string;
   height: string;
   tech: string;
   link: string;
@@ -13,12 +14,16 @@ interface Props {
 export default function Project(props: Props) {
   return (
     <div className="project__container">
-      <img
-        style={{ height: props.height }}
-        src={props.thumbnail}
-        alt="Project"
-        className="project__image"
-      />
+      {props.thumbnail ? (
+        <img
+          style={{ height: props.height }}
+          src={props.thumbnail}
+          alt="Project"
+          className="project__image"
+        />
+      ) : (
+        <h1 className="project__title">{props.title}</h1>
+      )}
 
       <div className="project__actions">
         <IoIosImages
