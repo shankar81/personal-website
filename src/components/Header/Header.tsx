@@ -42,13 +42,13 @@ export default function Header(props: Props) {
         >
           About Us
         </NavLink>
-        <NavLink
+        {/* <NavLink
           activeClassName="header__item--active"
           className="header__item"
           to="/work"
         >
           Our Work
-        </NavLink>
+        </NavLink> */}
         <NavLink
           activeClassName="header__item--active"
           className="header__item"

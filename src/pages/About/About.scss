@@ -1,25 +1,8 @@
 @import "../../cosntants.scss";
 
+// Common styles
 .about {
-  &__container {
-    background-color: #f9f9f9;
-  }
-
   &__top {
-    background-image: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0.85) 50%,
-        rgba(255, 255, 255, 0.85) 50%
-      ),
-      url(../../assets/images/nature1-min.jpg);
-    height: 32rem;
-    background-size: cover;
-    background-position: center;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     &--content {
       display: flex;
       flex-direction: column;
@@ -31,7 +14,7 @@
   &__heading {
     font-weight: 400;
     font-size: 4rem;
-    color: #333;
+    color: inherit;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: $letter-spacing;
@@ -43,8 +26,6 @@
   }
 
   &__me {
-    padding: 3rem $paddingH;
-
     &--content {
       width: 60%;
     }
@@ -61,21 +42,97 @@
       margin-bottom: 3rem;
     }
   }
+}
 
-  &__timeline {
-    background-color: #eee;
-    padding: 3rem $paddingH 0 $paddingH;
+.theme-light {
+  .about {
+    &__container {
+      background-color: #f9f9f9;
+    }
 
-    display: flex;
-    flex-direction: column;
+    &__top {
+      background-image: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0.85) 50%,
+          rgba(255, 255, 255, 0.85) 50%
+        ),
+        url(../../assets/images/nature1-min.jpg);
+      height: 32rem;
+      background-size: cover;
+      background-position: center;
+      color: #333;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__me {
+      padding: 3rem $paddingH;
+    }
+
+    &__timeline {
+      background-color: #eee;
+      padding: 3rem $paddingH 0 $paddingH;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__skills {
+      padding: 3rem $paddingH 0 $paddingH;
+
+      display: flex;
+      flex-direction: column;
+    }
   }
+}
 
-  &__skills {
-    padding: 3rem $paddingH 0 $paddingH;
+.theme-dark {
+  .about {
+    &__container {
+      background-color: #f9f9f9;
+    }
 
-    display: flex;
-    flex-direction: column;
+    &__top {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.85) 50%,
+          rgba(0, 0, 0, 0.85) 50%
+        ),
+        url(../../assets/images/nature1-min.jpg);
+      height: 32rem;
+      background-size: cover;
+      background-position: center;
+      color: #f9f9f9;
 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
+    &__me {
+      padding: 3rem $paddingH;
+      background-color: #18191a;
+      color: #f9f9f9;
+    }
+
+    &__timeline {
+      background-color: #111;
+      padding: 3rem $paddingH 0 $paddingH;
+      color: #f9f9f9;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__skills {
+      padding: 3rem $paddingH 0 $paddingH;
+      background-color: #18191a;
+      color: #f9f9f9;
+
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

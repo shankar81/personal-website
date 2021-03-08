@@ -1,14 +1,6 @@
 @import "../../cosntants.scss";
 
 .timeline {
-  &__container {
-    position: relative;
-    margin-top: 2rem;
-
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
   &__line {
     position: absolute;
     top: 50%;
@@ -59,7 +51,7 @@
     &--heading {
       font-weight: 400;
       text-transform: uppercase;
-      color: #333;
+      color: inherit;
       margin-bottom: 1rem;
       text-align: right;
     }
@@ -78,7 +70,33 @@
     &--title {
       font-size: 3rem;
       text-align: right;
+      color: inherit;
+    }
+  }
+}
+
+.theme-light {
+  .timeline {
+    &__container {
+      position: relative;
+      margin-top: 2rem;
       color: #333;
+
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+.theme-dark {
+  .timeline {
+    &__container {
+      position: relative;
+      margin-top: 2rem;
+      color: #f9f9f9;
+
+      display: flex;
+      flex-direction: column-reverse;
     }
   }
 }
