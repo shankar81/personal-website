@@ -15,8 +15,31 @@ interface Props {
 export default function LightBox(props: Props) {
   const [images, setImages] = useState<LightBoxImage[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentScale, setCurrentScale] = useState(1);
+  const [startMoving, setMoving] = useState(false);
 
   useEffect(() => {
+    // Track scroll events
+    document.addEventListener("wheel", (event) => {
+      const { deltaY } = event;
+      if (deltaY > 0) {
+        setCurrentScale((scale) => (scale <= 1 ? 1 : scale - 0.1));
+      } else {
+        setCurrentScale((scale) => (scale >= 3 ? 3 : scale + 0.1));
+      }
+    });
+
+    // window.addEventListener("mousemove", (e) => {
+    //   if (startMoving) {
+    //
+    //   }
+    // });
+
+    // window.addEventListener("mousedown", () => setMoving(true));
+
+    // window.addEventListener("mouseup", () => setMoving(false));
+
+    // Toggling scrollbar
     document.getElementsByTagName("body")[0].style.overflowY = "hidden";
     const imgs = props.images.map((el, index) => {
       return { src: el, selected: index === 0 };
@@ -26,7 +49,7 @@ export default function LightBox(props: Props) {
     return () => {
       document.getElementsByTagName("body")[0].style.overflowY = "scroll";
     };
-  }, [props.images]);
+  }, [props.images, startMoving]);
 
   function onSelectThumbnail(index: number) {
     if (images[index].selected) return;
@@ -34,6 +57,7 @@ export default function LightBox(props: Props) {
     i.map((el) => (el.selected = false));
     i[index].selected = true;
 
+    setCurrentScale(1);
     setCurrentIndex(index);
     setImages([...i]);
   }
@@ -49,7 +73,6 @@ export default function LightBox(props: Props) {
     onSelectThumbnail(currIndex);
   }
 
-  console.log(images, images.length);
   return (
     <div className="lightbox__container">
       <div
@@ -59,6 +82,7 @@ export default function LightBox(props: Props) {
         <AiOutlineArrowLeft className="lightbox__icon" />
       </div>
       <img
+        style={{ transform: `scale(${currentScale})` }}
         src={images[currentIndex]?.src}
         alt="Lightbox"
         className="lightbox__img"

@@ -48,3 +48,9 @@ body {
   width: 100%;
   position: relative;
 }
+
+a,
+button,
+li {
+  user-select: none;
+}
