@@ -16,7 +16,7 @@ export default function LightBox(props: Props) {
   const [images, setImages] = useState<LightBoxImage[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentScale, setCurrentScale] = useState(1);
-  const [startMoving, setMoving] = useState(false);
+  // const [startMoving, setMoving] = useState(false);
 
   useEffect(() => {
     // Track scroll events
@@ -49,7 +49,7 @@ export default function LightBox(props: Props) {
     return () => {
       document.getElementsByTagName("body")[0].style.overflowY = "scroll";
     };
-  }, [props.images, startMoving]);
+  }, [props.images]);
 
   function onSelectThumbnail(index: number) {
     if (images[index].selected) return;
