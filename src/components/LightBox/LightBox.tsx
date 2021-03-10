@@ -46,7 +46,7 @@ export default function LightBox(props: Props) {
     return () => {
       document.getElementsByTagName("body")[0].style.overflowY = "scroll";
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.images]);
 
   console.log(startMoving);
@@ -57,9 +57,9 @@ export default function LightBox(props: Props) {
     i.map((el) => (el.selected = false));
     i[index].selected = true;
 
-    setCurrentScale(1);
     setCurrentIndex(index);
     setImages([...i]);
+    setCurrentScale(1);
   }
 
   function onChangeImage(index: number) {
@@ -77,6 +77,7 @@ export default function LightBox(props: Props) {
     const draggable = document.getElementById("draggable");
     draggable?.addEventListener("mousemove", dragging);
     draggable?.addEventListener("mouseup", stopDragging);
+    draggable?.addEventListener("mouseout", stopDragging);
     setMoving(true);
     return false;
   }
@@ -87,6 +88,7 @@ export default function LightBox(props: Props) {
     const target = document.getElementById("draggable");
     if (target) {
       target.style.left = `${e.clientX - target.clientWidth / 2}px`;
+      target.style.top = `${e.clientY - target.clientHeight / 3.5}px`;
     }
     return false;
   }
@@ -101,7 +103,7 @@ export default function LightBox(props: Props) {
   }
 
   return (
-    <div id="draggable-container" className="lightbox__container">
+    <div className="lightbox__container">
       <div
         onClick={() => onChangeImage(-1)}
         className="lightbox__icon--container lightbox__icon--container--left"
