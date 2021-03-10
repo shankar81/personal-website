@@ -16,7 +16,7 @@ export default function LightBox(props: Props) {
   const [images, setImages] = useState<LightBoxImage[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentScale, setCurrentScale] = useState(1);
-  // const [startMoving, setMoving] = useState(false);
+  const [startMoving, setMoving] = useState(false);
 
   useEffect(() => {
     // Track scroll events
@@ -29,15 +29,12 @@ export default function LightBox(props: Props) {
       }
     });
 
-    // window.addEventListener("mousemove", (e) => {
-    //   if (startMoving) {
-    //
-    //   }
-    // });
+    // Dragging image
+    const draggable = document.getElementById("draggable");
 
-    // window.addEventListener("mousedown", () => setMoving(true));
-
-    // window.addEventListener("mouseup", () => setMoving(false));
+    if (draggable) {
+      draggable.addEventListener("mousedown", startDragging);
+    }
 
     // Toggling scrollbar
     document.getElementsByTagName("body")[0].style.overflowY = "hidden";
@@ -49,7 +46,10 @@ export default function LightBox(props: Props) {
     return () => {
       document.getElementsByTagName("body")[0].style.overflowY = "scroll";
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.images]);
+
+  console.log(startMoving);
 
   function onSelectThumbnail(index: number) {
     if (images[index].selected) return;
@@ -73,8 +73,35 @@ export default function LightBox(props: Props) {
     onSelectThumbnail(currIndex);
   }
 
+  function startDragging() {
+    const draggable = document.getElementById("draggable");
+    draggable?.addEventListener("mousemove", dragging);
+    draggable?.addEventListener("mouseup", stopDragging);
+    setMoving(true);
+    return false;
+  }
+
+  function dragging(e: MouseEvent) {
+    e.preventDefault();
+    // console.log(e.offsetX, e.clientX);
+    const target = document.getElementById("draggable");
+    if (target) {
+      target.style.left = `${e.clientX - target.clientWidth / 2}px`;
+    }
+    return false;
+  }
+
+  console.log(currentScale);
+
+  function stopDragging() {
+    const draggable = document.getElementById("draggable");
+    draggable?.removeEventListener("mousemove", dragging);
+    draggable?.removeEventListener("mouseup", stopDragging);
+    setMoving(false);
+  }
+
   return (
-    <div className="lightbox__container">
+    <div id="draggable-container" className="lightbox__container">
       <div
         onClick={() => onChangeImage(-1)}
         className="lightbox__icon--container lightbox__icon--container--left"
@@ -82,6 +109,7 @@ export default function LightBox(props: Props) {
         <AiOutlineArrowLeft className="lightbox__icon" />
       </div>
       <img
+        id="draggable"
         style={{ transform: `scale(${currentScale})` }}
         src={images[currentIndex]?.src}
         alt="Lightbox"
