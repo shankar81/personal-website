@@ -49,7 +49,7 @@ export default function Header(props: Props) {
         >
           Our Work
         </NavLink> */}
-        <NavLink
+        {/* <NavLink
           activeClassName="header__item--active"
           className="header__item"
           to="/blog"
@@ -62,7 +62,7 @@ export default function Header(props: Props) {
           to="/contact"
         >
           Contact us
-        </NavLink>
+        </NavLink> */}
         <li onClick={props.onChangeTheme} className="header__item">
           Change Theme
         </li>
