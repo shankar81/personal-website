@@ -43,7 +43,7 @@ export default function About() {
       </div>
 
       <div className="about__timeline">
-        <h1 className="about__heading">history</h1>
+        <h1 className="about__heading">experience</h1>
         <Timeline />
       </div>
       <div className="about__skills">
