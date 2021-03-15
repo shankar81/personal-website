@@ -26,8 +26,14 @@
   }
 
   &__me {
+    @media only screen and (max-width: $bp-small) {
+      padding: 3rem !important;
+    }
+
     &--content {
-      width: 60%;
+      @media only screen and (max-width: $bp-small) {
+        width: 100%;
+      }
     }
 
     &--heading {
@@ -40,6 +46,18 @@
       font-size: 1.6rem;
       color: #888;
       margin-bottom: 3rem;
+    }
+  }
+
+  &__timeline {
+    @media only screen and (max-width: $bp-small) {
+      padding: 3rem 3rem 0 3rem !important;
+    }
+  }
+
+  &__skills {
+    @media only screen and (max-width: $bp-small) {
+      padding: 3rem 3rem 0 3rem !important;
     }
   }
 }

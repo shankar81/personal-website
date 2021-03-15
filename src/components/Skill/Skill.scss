@@ -2,11 +2,12 @@
 
 .skill {
   &__container {
-    width: calc(100% / 4.5);
+    width: 24rem;
     background-color: #333;
     margin-bottom: 2rem;
     padding: 2rem;
     border-radius: 0.3rem;
+    margin-right: 2rem;
 
     display: flex;
     flex-direction: column;
